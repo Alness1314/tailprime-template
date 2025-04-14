@@ -1,0 +1,48 @@
+<div class="h-screen w-screen overflow-hidden bg-zinc-50 dark:bg-zinc-900 flex">
+
+    <app-navigation-drawer/>
+    <!-- Sidebar fijo (desktop) -->
+    <!--<aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-20 hidden md:block">
+        <nav class="p-4 space-y-2">
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Inicio</a>
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Perfil</a>
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Configuración</a>
+        </nav>
+    </aside>-->
+
+    <!-- Sidebar móvil (oculto por defecto) -->
+    <!--<div id="mobileSidebar"
+        class="fixed top-0 left-0 w-64 h-screen bg-white shadow-md z-30 transform -translate-x-full transition-transform duration-300 md:hidden">
+        <nav class="p-4 space-y-2">
+            <button onclick="toggleSidebar()" class="mb-4 text-sm text-blue-500">Cerrar ✕</button>
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Inicio</a>
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Perfil</a>
+            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100">Configuración</a>
+        </nav>
+    </div>-->
+
+    <!-- Contenedor principal -->
+    <div class="flex flex-col flex-1 md:ml-2 h-screen ml-4">
+
+        <!-- Navbar fija -->
+        <header
+            class="bg-gradient-to-br from-white to-zinc-50 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 h-20 bg-white shadow z-10 fixed top-0 left-0 md:left-72 right-0 md:ml-4 flex items-center px-4 justify-between">
+            <h1 class="text-xl font-bold text-gray-800 dark:text-gray-100">Mi Aplicación</h1>
+            <!-- Botón hamburguesa (solo en móviles) -->
+            <button class="md:hidden text-gray-700" onclick="toggleSidebar()">
+                ☰
+            </button>
+        </header>
+
+        <!-- Contenido con scroll -->
+        <main class="flex-1 overflow-auto mt-20 p-4 ml-4">
+                <div class="w-full h-full bg-zinc-50 dark:bg-zinc-900 p-4 rounded">
+                    <p class="mb-4">Este es el contenido principal con scroll X y Y.</p>
+                    <!-- Agrega aquí más contenido si lo deseas -->
+                    <router-outlet/>
+                </div>
+        </main>
+
+    </div>
+
+</div>

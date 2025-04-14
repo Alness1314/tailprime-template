@@ -1,0 +1,39 @@
+<div
+  class="h-full w-76 flex items-center justify-center bg-gradient-to-br from-white to-zinc-50 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 shadow-md">
+  <div class="h-full w-76 p-4 shadow-xl flex flex-col">
+    <div class="mb-2 flex items-center gap-4 p-4">
+      <img [src]="brandLogo" alt="brand" class="h-12 w-19" />
+    </div>
+    <hr class="my-2 border-zinc-700/30 dark:border-zinc-200/30" />
+
+    <div class="flex-1">
+      <ng-container *ngFor="let item of menuItems">
+        <ol class="space-y-2">
+          <li class="my-1">
+            <a href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+              <i class="pi {{item.icon}} text-black dark:text-white"></i>
+              <span class="flex-1 ml-3 whitespace-nowrap"> {{ item.label }}</span>
+            </a>
+          </li>
+        </ol>
+      </ng-container>
+
+    </div>
+
+    <hr class="my-2 border-zinc-700/30 dark:border-zinc-200/30" />
+
+    <div class="mt-auto">
+      <ol>
+        <a href="#"
+          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          <i class="pi pi-sign-out text-black dark:text-white"></i>
+          <span class="flex-1 ml-3 whitespace-nowrap"> Cerrar Sesión</span>
+        </a>
+      </ol>
+      <p class="mt-5 font-medium text-sm text-right" [ngClass]="darkMode ? 'text-gray-400' : 'text-gray-600'">
+        {{ footerContent }}
+      </p>
+    </div>
+  </div>
+</div>
